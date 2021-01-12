@@ -6,32 +6,36 @@ class ArticleItemDetails extends React.Component {
       <div className={"pr-3"}>
         <div className={"d-flex align-center mb-2"}>
           <img
-          alt="cover"
+            alt="cover"
             style={{ width: "20px", height: "20px" }}
             src={
               "https://miro.medium.com/fit/c/20/20/1*xF11-TSkpJSCgLc75f-DFw.jpeg"
             }
           />
-
-          <span className={"author"}>
-            <a href="/">
-              <b>{this.props.article.author} </b> in <b>Better Advice</b>
-            </a>
-          </span>
+          {this.props.article && (
+            <span className={"author"}>
+              <a href="/">
+                <b>{this.props.article.author.name} </b> in <b>Better Advice</b>
+              </a>
+            </span>
+          )}
         </div>
         <a href="/">
-          <span
-            className={"heading"}
-            style={{
-              fontSize: this.props.headingFont === "small" ? "16px" : "22px",
-              lineHeight: this.props.headingFont === "small" ? "20px" : "28px",
-            }}
-          >
-            {this.props.article.headLine}
-          </span>
+          {this.props.article && (
+            <span
+              className={"heading"}
+              style={{
+                fontSize: this.props.headingFont === "small" ? "16px" : "22px",
+                lineHeight:
+                  this.props.headingFont === "small" ? "20px" : "28px",
+              }}
+            >
+              {this.props.article.headLine}
+            </span>
+          )}
         </a>
 
-        {this.props.subheading && (
+        {this.props.article && (
           <div className={"subheading"}>
             <p>
               <a href="/">{this.props.article.subHead}</a>

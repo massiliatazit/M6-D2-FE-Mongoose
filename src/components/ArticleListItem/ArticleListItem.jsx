@@ -10,10 +10,10 @@ class ArticleListItem extends React.Component {
         }`}
       >
         <ArticleItemDetails {...this.props} />
-        {this.props.articleImg && (
+        {this.props.article && (
           <a href="/">
             <img
-            alt="cover"
+              alt="cover"
               className={
                 this.props.articleImg === "top" ? "img-large" : "img-small"
               }
